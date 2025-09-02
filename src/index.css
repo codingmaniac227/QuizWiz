@@ -1,0 +1,43 @@
+:root {
+  font-family: 'Karla', 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg-color: #F5F7FB;
+  --blob-color: #FFFAD1;
+  --playbutton-color: #4D5B9E;
+  --playbutton-font-size: 1rem;
+  --font-color: #293264;
+  --app-h1-font-size: 1.953rem;
+  --app-h2-font-size: 1rem;
+  --incorrect-answer-color: #F8BCBC;
+  --correct-answer-color: #94D7A2;
+}
+
+body, html #root {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+body {
+  background-image: url(/public/corner-blob.svg);
+  background-repeat: no-repeat;
+  background-position: right top;
+  
+}
