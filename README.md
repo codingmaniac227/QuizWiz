@@ -117,7 +117,7 @@ npm install npm@latest -g
 - Click to select answers. When all questions are answered, check results.
 - Review correct answers, see your score, and play again or change options.
 
-Live Demo: <a href="https://quizzwizzed.netlify.app" target="_blank" rel="noopener">https://quizzwizzed.netlify.app</a>
+Live Demo: <a href="https://quizwizzed.netlify.app/" target="_blank" rel="noopener">https://quizzwizzed.netlify.app</a>
 
 <p align="right">(<a href="#quizwizzed">back to top</a>)</p>
 
