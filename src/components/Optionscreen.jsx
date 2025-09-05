@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 
 
-export default function Optionscreen({ values, onChange, onSubmit, onBack, container, labelContainerOptions, labelSingleContainerOptions, headerContainer, backToStart, startQuiz, menuOrPlay }) {
+export default function Optionscreen({ values, onChange, onSubmit, onBack, container, logoSpanOptions, labelContainerOptions, labelSingleContainerOptions, headerContainer, backToStart, startQuiz, menuOrPlay }) {
   const { amount, categoryId, difficulty, type, encode } = values
 
   const [categories, setCategories] = useState([])
@@ -40,7 +40,7 @@ export default function Optionscreen({ values, onChange, onSubmit, onBack, conta
     return (
         <>
             <form onSubmit={(e) => { e.preventDefault(); onSubmit() }} className={container}>
-                <header className={headerContainer}>QuizWiz</header>
+                <header className={headerContainer}>Quiz<span className={logoSpanOptions}>WIZZED</span></header>
 
                 <div className={labelContainerOptions}>
                     <label className={labelSingleContainerOptions}>

@@ -107,27 +107,29 @@ function App() {
   
   return (
     <>
-      <main className='quizwiz-container'>
+      <main className='quizwizzed-container'>
         {stage === 'start' && (
           <Startscreen
-            container='quizwiz-container-start'
-            shootingStar='quizwiz-background-shootingstar-start'
-            headerContainer='quizwiz-container-header-start' 
-            h1='quizwiz-h1-start' 
-            h2='quizwiz-h2-start' 
-            startbutton='quizwiz-startbutton-start'
+            container='quizwizzed-container-start'
+            shootingStar='quizwizzed-background-shootingstar-start'
+            headerContainer='quizwizzed-container-header-start'
+            logoSpan='quizwizzed-logo-span' 
+            h1='quizwizzed-h1-start' 
+            h2='quizwizzed-h2-start' 
+            startbutton='quizwizzed-startbutton-start'
             getQuestions={optionsScreen} 
           />
         )}
         
         {stage === 'options' && ( 
           <Optionscreen
-          container ='quizwiz-container-options'
-          headerContainer='quizwiz-headercontainer-options'
-          labelContainerOptions='quizwiz-label-container-options'
-          labelSingleContainerOptions='quizwiz-single-label-container-options'
-          backToStart='quizwiz-backtostart-button-options'
-          startQuiz='quizwiz-startquiz-button-options'
+          container ='quizwizzed-container-options'
+          logoSpanOptions='quizwizzed-logospan-options'
+          headerContainer='quizwizzed-headercontainer-options'
+          labelContainerOptions='quizwizzed-label-container-options'
+          labelSingleContainerOptions='quizwizzed-single-label-container-options'
+          backToStart='quizwizzed-backtostart-button-options'
+          startQuiz='quizwizzed-startquiz-button-options'
           values={options}
           onChange={updateOption}
           onSubmit={startQuiz}
@@ -140,22 +142,22 @@ function App() {
 
         {stage === 'quiz' && (
           <Quizscreen
-            container='quizwiz-container-quiz'
-            questionContainer='quizwiz-questioncontainer-quiz'
-            questionChoiceContainer='quizwiz-questionchoicecontainer-quiz'
-            questionTitle='quizwiz-questiontitle-quiz'
-            questionChoice='quizwiz-questionchoice-quiz'
-            questionChoiceSelected='quizwiz-questionchoiceselected-quiz'
-            questionChoiceCorrect='quizwiz-questionchoicecorrect-quiz'
-            questionChoiceWrong='quizwiz-questionchoiceincorrect-quiz'
-            questionChoiceDim='quizwiz-questionchoicedimmed-quiz'
-            checkAnswer='quizwiz-checkanswer-quiz'
-            triviaOptionsCheck='quizwiz-triviaoptions-quiz'
-            playAgainButton='quizwiz-playagain-quiz'
-            triviaOptionsChecked='quizwiz-triviaoptionschecked-quiz'
-            scoreBox='quizwiz-scorebox-quiz'
-            quizScore='quizwiz-quizscore-quiz'
-            menu='quizwiz-menu-quiz'
+            container='quizwizzed-container-quiz'
+            questionContainer='quizwizzed-questioncontainer-quiz'
+            questionChoiceContainer='quizwizzed-questionchoicecontainer-quiz'
+            questionTitle='quizwizzed-questiontitle-quiz'
+            questionChoice='quizwizzed-questionchoice-quiz'
+            questionChoiceSelected='quizwizzed-questionchoiceselected-quiz'
+            questionChoiceCorrect='quizwizzed-questionchoicecorrect-quiz'
+            questionChoiceWrong='quizwizzed-questionchoiceincorrect-quiz'
+            questionChoiceDim='quizwizzed-questionchoicedimmed-quiz'
+            checkAnswer='quizwizzed-checkanswer-quiz'
+            triviaOptionsCheck='quizwizzed-triviaoptions-quiz'
+            playAgainButton='quizwizzed-playagain-quiz'
+            triviaOptionsChecked='quizwizzed-triviaoptionschecked-quiz'
+            scoreBox='quizwizzed-scorebox-quiz'
+            quizScore='quizwizzed-quizscore-quiz'
+            menu='quizwizzed-menu-quiz'
             questions={questions}
             onBack={() => setStage('options')}
             onRestart={() => { setQuestions([]); setStage('start') }}
