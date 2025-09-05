@@ -109,17 +109,25 @@ function App() {
     <>
       <main className='quizwiz-container'>
         {stage === 'start' && (
-          <Startscreen 
-            header='quizwiz-header' 
-            h1='quizwiz-h1' 
-            h2='quizwiz-h2' 
-            startbutton='quizwiz-startbutton' 
+          <Startscreen
+            container='quizwiz-container-start'
+            shootingStar='quizwiz-background-shootingstar-start'
+            headerContainer='quizwiz-container-header-start' 
+            h1='quizwiz-h1-start' 
+            h2='quizwiz-h2-start' 
+            startbutton='quizwiz-startbutton-start'
             getQuestions={optionsScreen} 
           />
         )}
         
         {stage === 'options' && ( 
-          <Optionscreen 
+          <Optionscreen
+          container ='quizwiz-container-options'
+          headerContainer='quizwiz-headercontainer-options'
+          labelContainerOptions='quizwiz-label-container-options'
+          labelSingleContainerOptions='quizwiz-single-label-container-options'
+          backToStart='quizwiz-backtostart-button-options'
+          startQuiz='quizwiz-startquiz-button-options'
           values={options}
           onChange={updateOption}
           onSubmit={startQuiz}
@@ -132,6 +140,22 @@ function App() {
 
         {stage === 'quiz' && (
           <Quizscreen
+            container='quizwiz-container-quiz'
+            questionContainer='quizwiz-questioncontainer-quiz'
+            questionChoiceContainer='quizwiz-questionchoicecontainer-quiz'
+            questionTitle='quizwiz-questiontitle-quiz'
+            questionChoice='quizwiz-questionchoice-quiz'
+            questionChoiceSelected='quizwiz-questionchoiceselected-quiz'
+            questionChoiceCorrect='quizwiz-questionchoicecorrect-quiz'
+            questionChoiceWrong='quizwiz-questionchoiceincorrect-quiz'
+            questionChoiceDim='quizwiz-questionchoicedimmed-quiz'
+            checkAnswer='quizwiz-checkanswer-quiz'
+            triviaOptionsCheck='quizwiz-triviaoptions-quiz'
+            playAgainButton='quizwiz-playagain-quiz'
+            triviaOptionsChecked='quizwiz-triviaoptionschecked-quiz'
+            scoreBox='quizwiz-scorebox-quiz'
+            quizScore='quizwiz-quizscore-quiz'
+            menu='quizwiz-menu-quiz'
             questions={questions}
             onBack={() => setStage('options')}
             onRestart={() => { setQuestions([]); setStage('start') }}
