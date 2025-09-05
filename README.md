@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/codingmaniac227/QuizWizzed" target="_blank" rel="noopener">
-    <img src="./logo.png" alt="Logo" width="90" height="90" style="border-radius:50%">
+    <img src="./public/logo.png" alt="Logo" width="90" height="90" style="border-radius:50%">
   </a>
 
   <h3 align="center">QuizWizzed</h3>
@@ -53,7 +53,7 @@
 ## About The Project
 
 <p align="center">
-  <img src="./screenshot.png" alt="QuizWizzed Screenshot" width="520">
+  <img src="./public/screenshot.png" alt="QuizWizzed Screenshot" width="520">
 </p>
 
 QuizWizzed lets you configure and run trivia rounds sourced from Open Trivia DB. It supports multiple-choice and true/false questions, tracks selections, and provides clear visual feedback with a final score. The app is organized into Start, Options, and Quiz screens, and uses simple, performant UI patterns.
