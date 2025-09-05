@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 
 
-export default function Optionscreen({ values, onChange, onSubmit, onBack }) {
+export default function Optionscreen({ values, onChange, onSubmit, onBack, container, labelContainerOptions, labelSingleContainerOptions, headerContainer, backToStart, startQuiz, menuOrPlay }) {
   const { amount, categoryId, difficulty, type, encode } = values
 
   const [categories, setCategories] = useState([])
@@ -39,78 +39,81 @@ export default function Optionscreen({ values, onChange, onSubmit, onBack }) {
 
     return (
         <>
-            <form onSubmit={(e) => { e.preventDefault(); onSubmit() }} >
-                <label>
-                    Number of questions(1-50)
-                    <input
-                        type='number'
-                        min={1} max={50}
-                        value={amount}
-                        onChange={(e) => onChange('amount', Math.max(1, Math.min(50, +e.target.value || 10)))}
+            <form onSubmit={(e) => { e.preventDefault(); onSubmit() }} className={container}>
+                <header className={headerContainer}>QuizWiz</header>
 
-                    />
-                </label>
+                <div className={labelContainerOptions}>
+                    <label className={labelSingleContainerOptions}>
+                        Number of questions(1-50)
+                        <input
+                            type='number'
+                            min={1} max={50}
+                            value={amount}
+                            onChange={(e) => onChange('amount', Math.max(1, Math.min(50, +e.target.value || 10)))}
 
-                <label>
-                    Category
-                    <select
-                        value={categoryId}
-                        onChange={(e) => onChange('categoryId', e.target.value)}
-                        disabled={catsLoading}
-                        aria-describedby={catsError ? 'catsError' : undefined}
-                    >
+                        />
+                    </label>
 
-                        <option value=''>Any category</option>
-                        {categories.map(c => (
-                            <option key={c.id} value={c.id}>
-                                {c.name}
-                            </option>
-                        ))}
-                    </select>
-                    {catsError && (
-                        <small id='catsError' className='error'>{catsError}</small>
-                    )}
-                </label>
+                    <label className={labelSingleContainerOptions}>
+                        Category
+                        <select
+                            value={categoryId}
+                            onChange={(e) => onChange('categoryId', e.target.value)}
+                            disabled={catsLoading}
+                            aria-describedby={catsError ? 'catsError' : undefined}
+                        >
 
-                <label>
-                    Difficulty
-                    <select
-                        value={difficulty}
-                        onChange={(e) => onChange('difficulty', e.target.value)}
-                    >
-                        <option value=''>Any</option>
-                        <option value='easy'>Easy</option>
-                        <option value='medium'>Medium</option>
-                        <option value='hard'>Hard</option>
-                    </select>
-                </label>
+                            <option value=''>Any category</option>
+                            {categories.map(c => (
+                                <option key={c.id} value={c.id}>
+                                    {c.name}
+                                </option>
+                            ))}
+                        </select>
+                        {catsError && (
+                            <small id='catsError' className='error'>{catsError}</small>
+                        )}
+                    </label>
 
-                <label>
-                    Type
-                    <select
-                        value={type}
-                        onChange={(e) => onChange('type', e.target.value)}
-                    >
-                        <option value=''>Any</option>
-                        <option value='multiple'>Multiple choice</option>                                                <option></option>
-                        <option value='boolean'>True / False</option>
-                    </select>  
-                </label>
+                    <label className={labelSingleContainerOptions}>
+                        Difficulty
+                        <select
+                            value={difficulty}
+                            onChange={(e) => onChange('difficulty', e.target.value)}
+                        >
+                            <option value=''>Any</option>
+                            <option value='easy'>Easy</option>
+                            <option value='medium'>Medium</option>
+                            <option value='hard'>Hard</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Encoding
-                    <select
-                        value={encode}
-                        onChange={(e) => onChange('encode', e.target.value)}
-                    >
-                        <option value='url3986'>URL-encoded (recommended)</option>
-                        <option value='base64'>Base64</option>
-                    </select>     
-                </label>
+                    <label className={labelSingleContainerOptions}>
+                        Type
+                        <select
+                            value={type}
+                            onChange={(e) => onChange('type', e.target.value)}
+                        >
+                            <option value=''>Any</option>
+                            <option value='multiple'>Multiple choice</option>
+                            <option value='boolean'>True / False</option>
+                        </select>  
+                    </label>
 
-                <div className='actions'>
-                    <button type='button' onClick={onBack}>Back</button>
-                    <button type='submit'>Start quiz</button>
+                    <label className={labelSingleContainerOptions}>
+                        Encoding
+                        <select
+                            value={encode}
+                            onChange={(e) => onChange('encode', e.target.value)}
+                        >
+                            <option value='url3986'>URL-encoded (recommended)</option>
+                            <option value='base64'>Base64</option>
+                        </select>     
+                    </label>
+                </div>
+                <div className={menuOrPlay}>
+                    <button type='button' onClick={onBack} className={backToStart}>Menu</button>
+                    <button type='submit' className={startQuiz}>Start quiz</button>
                 </div>
             </form>
         </>
